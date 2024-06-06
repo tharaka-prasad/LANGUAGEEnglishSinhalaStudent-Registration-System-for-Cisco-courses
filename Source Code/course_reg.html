@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Course Registration System </title>
+
+            
+        <link rel="stylesheet" href="styles.css" /> 
+        <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+            
+        
+    
+    
+    </head>
+    
+    <body background="computer1.jpg">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="about-section2">
+                <div class="button1">
+                    <a href="index.html">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="registration.html">Registration</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="login.html">Login</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="course_info.html">Cources</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="course_reg.html">Course Registration </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                </div>
+        </nav>
+
+
+
+        <form id="registrationForm" onsubmit="return validateForm()">
+
+            <h1>Course Registration Form </h1>
+            <h2>Student Name </h2>
+
+        <div class="input-container1" >
+            <input type="text" id="fname" name="fname" required>
+            <input type="text" id="mname" name="mname">
+            <input type="text" id="lname" name="lname">
+        </div>
+
+        <div class="label-container">
+            <label for="fname">First Name</label>
+            <label for="mname">Middle Name</label>
+            <label for="lname">Last Name</label>
+        </div>
+        <h2>Birth Date</h2>
+        <div class="input-container" >
+            <select  id="bmonth" name="bmonth" required>
+                <option value="" disabled selected>Select Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">june</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+                </select>
+
+            <input type="number" id="bdate" name="bdate" min="1" max="31" required>
+            
+            
+            
+            <select  id="byear" name="byear"required>
+                <option value="" disabled selected>Select Year</option>
+            <option value="1">1995</option>
+            <option value="2">1996</option>
+            <option value="3">1997</option>
+            <option value="4">1998</option>
+            <option value="5">1999</option>
+            <option value="6">2000</option>
+            <option value="7">2001</option>
+            <option value="8">2002</option>
+            </select>
+
+        </div>
+
+        <div class="label-container">
+            <label for="fname">Month</label>
+            <label for="mname">Date</label>
+            <label for="lname">Year</label>
+        </div>
+
+        
+        <h2>Address</h2>
+<div class="address">
+    <input type="text" id="address" name="address" required>
+</div>
+
+
+
+            <p>Street Address</p>
+            <div class="saddress">
+                <input type="text" id="saddress" name="saddress" required>
+            </div>
+
+                    <p>Street Address line 2</p>
+                    <div class="saddressline2" >
+                        <input type="text" id="state" name="state" required>
+                        <input type="number" id="zip" name="zip">
+                      
+                    </div>
+            
+                    <div class="label-saddressline2">
+                        <label for="state">State/Province</label>
+                        <label for="zip">Postal/Zip Code</label>
+                        
+                    </div>
+
+
+                    <div class="label-smail">
+                        <label for="mail">Student Mail :</label>
+                        <label for="number">Mobile Number :</label>
+                        
+                    </div>
+                    <div class="smail">
+                        <input type="text" id="mail" name="mail" required>
+                        
+                        <input type="text" id="number" name="number">
+                        
+                    </div>
+                    
+
+
+                    <div class="label-education">
+                        <label for="edu">Education Lavel :</label>
+                        <label for="course">Courses :</label>
+                        
+                        
+                    </div>
+                    <div class="education" >
+                        <input type="text" id="edu" name="edu" required>
+                        <input type="text" id="course" name="course">
+                      
+                    </div>
+                    <div></div>
+
+
+                    <p>Additional Comment</p>
+            <div class="comment">
+                <input type="text" id="acomment" name="acomment" required>
+            </div>
+            
+
+            <div class="btn1-container">
+    <a  href="course_info.html" class="btn1" onclick="return validateForm()">Submit</a>
+            </div>
+
+
+
+
+
+
+        </div>
+
+</form>
+
+<footer>
+    <p>&copy; K.M.T.P. WARNAKULASURIYA //  IT2020101  // Web Application Development // Horizon Campus // 2024-03-30 </p>
+</footer>
+
+
+ <script>
+        function validateForm() {
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var bmonth = document.getElementById("bmonth").value;
+    var bdate = document.getElementById("bdate").value;
+    var byear = document.getElementById("byear").value;
+    var address = document.getElementById("address").value;
+    var saddress = document.getElementById("saddress").value;
+    var state = document.getElementById("state").value;
+    var mail = document.getElementById("mail").value;
+    var edu = document.getElementById("edu").value;
+
+    
+    if (fname === "" || lname === "" || bmonth === "" || bdate === "" || byear === "" || address === "" || saddress === "" || state === "" || mail === "" || edu === "") {
+        alert("Please fill in all required fields.");
+        return false; 
+    }
+    return true; 
+}
+
+
+var bdateInput = document.getElementById("bdate");
+for (var i = 1; i <= 31; i++) {
+    var option = document.createElement("option");
+    option.text = i;
+    option.value = i;
+    bdateInput.appendChild(option);
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var bdateInput = document.getElementById("bdate");
+
+    bdateInput.addEventListener("input", function() {
+        var inputValue = parseInt(bdateInput.value);
+        if (isNaN(inputValue) || inputValue < 1 || inputValue > 31) {
+            alert("Please enter a valid date between 1 and 31.");
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var emailInput = document.getElementById("mail");
+    var typingTimer;
+    var doneTypingInterval = 2000; 
+
+    emailInput.addEventListener("input", function() {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(validateEmail, doneTypingInterval);
+    });
+
+    function validateEmail() {
+        var emailValue = emailInput.value;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailValue.trim() !== "" && !emailRegex.test(emailValue)) {
+            alert("Please enter a valid email address.");
+        }
+    }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var numberInput = document.getElementById("number");
+    var typingTimer;
+    var doneTypingInterval = 2000;
+
+    numberInput.addEventListener("input", function() {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(validatePhoneNumber, doneTypingInterval);
+    });
+
+    function validatePhoneNumber() {
+        var numberValue = numberInput.value;
+        var phoneRegex = /^\d{10}$/;
+
+        if (numberValue.trim() !== "" && !phoneRegex.test(numberValue)) {
+            alert("Please enter a valid phone number.");
+        }
+    }
+});
+
+
+    </script>
+
+       
+    </body>
+
+</html>

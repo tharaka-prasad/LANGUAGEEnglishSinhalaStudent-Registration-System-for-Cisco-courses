@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Course Registration System </title>
+
+        
+        <link rel="stylesheet" href="styles.css" /> 
+        <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+            
+        
+    
+    
+    </head>
+
+
+    <body background="networking.jpg">
+    
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="about-section2">
+                <div class="button1">
+                    <a href="index.html">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="registration.html">Registration</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="login.html">Login</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="course_info.html">Cources</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="course_reg.html">Course Registration </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                </div>
+        </nav>
+
+        
+  
+        <div id="main">
+        
+            <div id="head" class="container-fluid">
+                <h2>Registration form our site </h2>
+            </div>
+        
+           
+            
+            <div>
+                
+                
+                <form>
+                
+                <div>
+                     <div class="row">
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div class="col-md-3">&nbsp;</div>
+                        <div class="col-md-2"><p>Name :</p></div>
+                        <div class="col-md-3">
+                            <input type="text" name="name" id="name1" required class="form-control">
+                            <span id="err_name1"></span>
+                        </div>
+                        <div class="col-md-3">&nbsp;</div>
+                    </div>
+                </div>
+                    
+                    <div class="clearfix">&nbsp;</div>
+                <div>
+                     <div class="row">
+                        <div class="col-md-3">&nbsp;</div>
+                        <div class="col-md-2"><p>Surname :</p></div>
+                        <div class="col-md-3">
+                            <input type="text" name="name" id="name2" required class="form-control">
+                            <span id="err_name2"></span>
+                        </div>
+                        <div class="col-md-3">&nbsp;</div>
+                    </div>
+                </div>
+                    
+                    <div class="clearfix">&nbsp;</div>
+                    
+                    
+                <div>
+                     <div class="row">
+                        <div class="col-md-3">&nbsp;</div>
+                        <div class="col-md-2"><p>Email :</p></div>
+                        <div class="col-md-3">
+                            <input type="text" name="email" id="email" required class="form-control">
+                            <span id="err_email"></span>
+                        </div>
+                        <div class="col-md-3">&nbsp;</div>
+                    </div>
+                </div>
+                    <div class="clearfix">&nbsp;</div>
+                <div>
+                    <div class="row">
+                       <div class="col-md-3">&nbsp;</div>
+                       <div class="col-md-2"><p>MobileNumber :</p></div>
+                       <div class="col-md-3">
+                           <input type="text" name="mobileno" id="mobileno" required class="form-control">
+                           <span id="err_mobileno"></span>
+                       </div>
+                       <div class="col-md-3">&nbsp;</div>
+                   </div>
+               </div>
+                       
+                       <div class="clearfix">&nbsp;</div>
+                           
+                <div>
+                     <div class="row">
+                        <div class="col-md-3">&nbsp;</div>
+                        <div class="col-md-2"><p>Password :</p></div>
+                        <div class="col-md-3">
+                            <input type="password" name="password1" id="password1" required class="form-control">
+                            <span id="err_password1"></span>
+                        </div>
+                        <div class="col-md-3">&nbsp;</div>
+                    </div>
+                </div>
+                
+                    <div class="clearfix">&nbsp;</div>
+                    
+                <div>
+                     <div class="row">
+                        <div class="col-md-3">&nbsp;</div>
+                        <div class="col-md-2"><p>ConfirmpPassword :</p></div>
+                        <div class="col-md-3">
+                            <input type="password" name="password2" id="password2" required class="form-control">
+                            <span id="err_password2"></span>
+                        </div>
+                        <div class="col-md-3">&nbsp;</div>
+                    </div>
+                </div>
+                
+                    <div class="clearfix">&nbsp;</div>
+                
+                    
+                <div class="row">
+                        <div class="col-md-3">&nbsp;</div>
+                        <div class="col-md-4">
+                       
+                            <input type="submit" name="sub" id="sub" value="Submit" class="form-control btn btn-success"/></div>
+                               <div class="col-md-4">
+                            <input type="reset" name="sub" id="subt" value="Clear" class="form-control btn btn-danger"/>
+                        </div>
+                        <div class="col-md-3">&nbsp;</div>
+                    </div>
+                
+                
+            
+            
+            </form>
+            </div> 
+        </div>
+        
+        <footer>
+            <p>&copy; K.M.T.P. WARNAKULASURIYA //  IT2020101  // Web Application Development // Horizon Campus // 2024-03-30 </p>
+        </footer>
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("sub").addEventListener("click", function(event) {
+        
+        event.preventDefault();
+
+       
+        var valid = true;
+
+      
+        var name1 = document.getElementById("name1").value.trim();
+        var name2 = document.getElementById("name2").value.trim();
+        var nameRegex = /^[a-zA-Z\s]+$/; 
+
+        if (name1 === "") {
+            document.getElementById("err_name1").innerText = "Please enter your name";
+            valid = false;
+        } else if (!nameRegex.test(name1)) {
+            document.getElementById("err_name1").innerText = "Name should contain only alphabets";
+            valid = false;
+        } else {
+            document.getElementById("err_name1").innerText = "";
+        }
+
+        if (name2 === "") {
+            document.getElementById("err_name2").innerText = "Please enter your surname";
+            valid = false;
+        } else if (!nameRegex.test(name2)) {
+            document.getElementById("err_name2").innerText = "Surname should contain only alphabets";
+            valid = false;
+        } else {
+            document.getElementById("err_name2").innerText = "";
+        }
+
+        
+        var email = document.getElementById("email").value.trim();
+        var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+
+        if (email === "") {
+            document.getElementById("err_email").innerText = "Please enter your email";
+            valid = false;
+        } else if (!emailRegex.test(email)) {
+            document.getElementById("err_email").innerText = "Please enter a valid email";
+            valid = false;
+        } else {
+            document.getElementById("err_email").innerText = "";
+        }
+
+        var mobileno = document.getElementById("mobileno").value.trim();
+        var mobileRegex = /^\d{10}$/; 
+
+        if (mobileno === "") {
+            document.getElementById("err_mobileno").innerText = "Please enter your mobile number";
+            valid = false;
+        } else if (!mobileRegex.test(mobileno)) {
+            document.getElementById("err_mobileno").innerText = "Please enter a valid 10-digit mobile number";
+            valid = false;
+        } else {
+            document.getElementById("err_mobileno").innerText = "";
+        }
+
+        var password1 = document.getElementById("password1").value;
+        var password2 = document.getElementById("password2").value;
+
+        if (password1 === "") {
+            document.getElementById("err_password1").innerText = "Please enter your password";
+            valid = false;
+        } else {
+            document.getElementById("err_password1").innerText = "";
+        }
+
+        if (password2 === "") {
+            document.getElementById("err_password2").innerText = "Please confirm your password";
+            valid = false;
+        } else if (password1 !== password2) {
+            document.getElementById("err_password2").innerText = "Passwords do not match";
+            valid = false;
+        } else {
+            document.getElementById("err_password2").innerText = "";
+        }
+
+        
+        document.getElementById("sub").addEventListener("click", function() {
+        window.location.href = "index.html";
+        });
+    });
+});
+
+            </script>
+         
+           
+            
+    
+    </body>
+
+
+
+
+</html>
